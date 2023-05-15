@@ -1,0 +1,200 @@
+@charset "utf-8";
+/* CSS Document */
+/*---------- element ------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*---------- layout ------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: #eee;
+}
+
+section {
+    padding: 2rem 0;
+    margin: 0 0 3rem;
+    background: #fff;
+}
+
+.copy {
+    text-align: center;
+}
+
+
+/*---------- main ------------*/
+
+.count_box {
+	margin:0 0 2rem;
+	padding:2rem;
+	background:#F8FDC2;
+}
+.count_box p {
+	font-size:1.1em;
+	font-weight:bold;
+}
+
+/*カウントを自動で追加*/
+.count {
+    counter-reset: number;
+}
+
+.count li {
+    counter-increment: number;
+	margin:0 0 0.25em;
+	font-size:1.2em;
+	line-height:1.8;
+	/*color: #FD5457;*/
+}
+.count li span {
+	border-bottom: dotted 2px #FD5457;
+}
+
+.count li:before {
+    content: counter(number);
+	display: inline-block;
+	margin-right:0.5em;
+	width: 1.4em;
+	height: 1.4em;
+	text-align:center;
+	line-height:1.4em;
+	vertical-align: middle;
+    color: #fff;
+	background: #FD5457;
+	border-radius: 50%;
+}
+
+.sample1 {
+    height: 100vh;/*ウィンドウサイズの高さの100%*/
+    color: #fff;
+    background: #a20000;
+}
+
+
+.sample2 {
+    background: rgba(162, 0, 0, 0.5);
+}
+
+.fixed_nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+}
+
+.fixed_nav li {
+    
+}
+
+.fixed_nav .logo img {
+    width: 120px;
+}
+
+.fixed_nav a {
+    padding: 1em 1.5em;
+    color: inherit;
+}
+
+.sample3 {
+    height: 100vh;/*ウィンドウサイズの高さの100%*/
+    color: #fff;
+    background: #006490;
+}
+
+.center_box {
+    margin: 0 0 3rem;
+    height: 50vh;
+    background: #f0c534;
+}
+
+.center1 {
+  
+}
+/*---------------------ここから記述スタート----------------------------------------------------*/
+
+.txt1 {
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+
+.img1 {
+    position: relative;
+    top: 250px;
+    left: 250px;
+}
+
+.fixed_img {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+}
+
+.fixed_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    border-bottom: #333 solid 5px;
+    z-index: 5;
+}
+
+
+.center1 {
+    position: relative;
+}
+
+.auto_img {/*---------.center1をposition: relative;にしていなかったため、当初失敗した-------*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.center2 {
+    position: relative;
+}
+
+.transform_img {/*------ここの処理は理解できていない----------*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+

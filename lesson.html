@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>LESSON</title>
+        <meta name="description" content="HTMLの基本を勉強するページです">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        
+    </head>
+
+    <body>
+        <h1>LESSON</h1>
+        
+        <section class="position_section">
+            <h2>positonとz-index</h2>
+            
+            <div class="count_box">
+                <p>プロパティ「position」には、主に「relative absolute fixed static」の値がある。</p>
+                
+                <ul class="count">
+                    <li><span>デフォルトはstatic</span></li>
+                    <li><span>fixedは、ウィンドウを基準として固定</span></li>
+                    <li><span>absoluteは、一番近い祖先要素で、relative absolute fixedのいずれかが指定されている要素を基準として固定</span></li>
+                    <li><span>absoluteは自由にレイアウトができるので便利だが、レスポンシブデザインのサイトでは特によく考えて使用する必要がある。<br>
+                    多用すると融通が利かず更新できない不親切なコーディングになる。</span></li>
+                </ul>
+            </div>
+            
+            <div class="sample1">
+                <p class="txt1">.sample1を基準に、このテキストと、下の画像を自由な位置に動かしてみよう</p>
+                <img class="img1" src="images/cheb.png" alt="イメージ">
+            </div>
+
+            <div class="sample2">
+                <p class="txt">この下の画像をfixedで好きな位置に固定してみよう。</p>
+                <img class="fixed_img" src="images/cheb.png" alt="イメージ">
+                <p class="txt">この下のナビゲーションをfixedで上部に固定してみよう。<br>
+                    <small>※widthは使用せず、leftとrightを使用しよう</small></p>
+                <ul class="fixed_nav">
+                    <li class="logo"><a href="#"><img class="img" src="images/cheb.png" alt="ロゴ"></a></li>
+                    <li><a href="#">サービス</a></li>
+                    <li><a href="#">私たちについて</a></li>
+                    <li><a href="#">アクセス</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="count_box">
+                <p>プロパティ「z-index」は、レイヤーの順番。値が大きい方が上になる。</p>
+                
+                <ul class="count">
+                    <li><span>デフォルトは0だが、その要素のpositionがstaticだと0
+                    すら有効にはならない</span></li>
+                    <li><span>positionがrelative absolute fixed の場合に有効になる</span></li>
+                    <li><span>基本的に値が大きい方が上になるが、その要素の祖先要素にz-indexが指定されている場合はそれが優先される</span></li>
+                    <li><span>z-indexが同じ場合は、html上の後の方の要素が上になる</span></li>
+                    <li><span>z-indexは数値をたくさん使用しすぎると複雑になり、構成が理解しにくくなる。「1,2,-1」くらいの値で充分コーディングできるようなスキルを身につけよう</span></li>
+                </ul>
+            </div>
+
+            <div class="sample3">
+                <p class="txt_z">このテキストと、下の画像の重なり順を検証してみよう。<br>
+                テキストがabsoluteの場合はどうなるか？　→　テキストが上に来る<br>
+                画像がabsoluteの場合は？　→　画像が上に来る<br>
+                両方がabsoluteの場合は？　→　画像が上に来る（html上でimgの方が後の要素だから）<br>
+                両方がabsoluteでテキストのz-indexの数字＞画像のz-indexの数字の場合？　→　テキストが上に来る
+                </p>
+                <img class="img_z" src="images/cheb.png" alt="イメージ">
+            </div>
+
+        </section>
+        
+        
+        <section class="center_section">
+            <h2>上下左右中央揃えのいろいろ</h2>
+            
+            <p>指定の方法で上下左右中央揃えにしてみよう<br><br>
+                absolute auto</p>
+            <div class="center_box center1">
+                <img class="auto_img" src="images/cheb.png" alt="イメージ">
+            </div>
+
+            <p>absolute transform</p>
+            <div class="center_box center2">
+                <img class="transform_img" src="images/cheb.png" alt="イメージ">
+            </div>
+
+            <p>flex</p>
+            <div class="center_box center3">
+                <img class="flex_img" src="images/cheb.png" alt="イメージ">
+            </div>
+
+        </section>
+        
+
+        <footer style="text-align: center">
+            <p class="copy">&copy; Web Design Class</p>
+        </footer>
+    </body>
+</html>
